@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, input } from '@angular/core';
 
 @Directive({
   selector: 'a[appSafeLinkDirective]',
@@ -7,6 +7,8 @@ import { Directive } from '@angular/core';
   },
 })
 export class SafeLinkDirective {
+  queryString = input('myapp', { alias: 'appSafeLinkDirective' });
+
   constructor() {
     console.log('SafeLink Directive is running');
   }
@@ -15,6 +17,8 @@ export class SafeLinkDirective {
     const wantsToLeave = window.confirm('Deseja deixar a página?');
 
     if (wantsToLeave) {
+      const element = (event.target as HTMLAnchorElement).href;
+      (event.target as HTMLAnchorElement).href = element + '?from=' + this.queryString();
       return;
     }
 
