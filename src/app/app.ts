@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+
+import { AuthComponent } from './components/auth/auth.component';
+import { LearningResourcesComponent } from './components/learning-resources/learning-resources.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [AuthComponent, LearningResourcesComponent],
 })
-export class App {
-  protected readonly title = signal('directives-deep-dive');
-}
+export class AppComponent {}
