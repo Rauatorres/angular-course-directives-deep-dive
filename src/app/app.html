@@ -5,5 +5,7 @@
 
   <app-auth />
 
-  <p appAuth="admin">Somente admins devem ver isso</p>
+  <ng-template appAuth="admin">
+    <p>Somente admins devem ver isso</p>
+  </ng-template>
 </main>
