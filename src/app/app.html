@@ -8,7 +8,7 @@
   <!-- <ng-template appAuth="admin">
     <p>Somente admins devem ver isso</p>
   </ng-template> -->
-  <p *appAuth="'admin'" class="protected-content admin">Somente admins devem ver isso</p>
+  <p *appAuth="'admin'" appLog class="protected-content admin">Somente admins devem ver isso</p>
   <p *appAuth="'user'" class="protected-content unauthenticated">Usuários devem ver isso</p>
   <p *appAuth="'guest'" class="protected-content authenticated">Convidados devem ver isso</p>
 </main>
